@@ -20,17 +20,17 @@ unsigned char var;
 		*/
 		glColor3f(1.0, 1.0, 1.0);
 		if (var == 'a') {
-			glBegin(GL_POLYGON);
-			glVertex2f(0.00, 0.0);
-			glVertex2f(0.0, 0.5);
-			glVertex2f(0.95, 0.5);
-			glVertex2f(0.95, 0.25);
-			glVertex2f(0.8, 0.0);
+			glBegin(GL_POLYGON); // ou glBegin(GL_POINTS);
+			glVertex2f(0.0, 0.0);
+			glVertex2f(0.0, 0.30);
+			glVertex2f(0.40, 0.30);
+			glVertex2f(0.60, 0.15);
+			glVertex2f(0.40, 0.0);
 			glEnd();
 			glutPostRedisplay();
 		} else if (var == 'b') {
-			GLfloat circle_points = 0.99f;
-			GLfloat angle, raioX = 0.055f, raioY = 0.055f;
+			GLfloat circle_points = 50.5f;
+			GLfloat angle, raioX = 0.55f, raioY = 0.55f;
 			glBegin(GL_LINE_LOOP);
 			for (int i = 0; i < circle_points; i++) {
 				angle = 2 * PI*i / circle_points;
@@ -41,15 +41,43 @@ unsigned char var;
 			glutPostRedisplay();
 		}
 		else if (var == 'c') {
-
+			GLfloat circle_points = 90.0f;
+			GLfloat angle, raioX = 0.50f, raioY = 0.50f;
+			glBegin(GL_LINE_LOOP);
+			for (int i = 0; i < circle_points; i++) {
+				angle = 2 * PI*i / circle_points;
+				glVertex2f(cos(angle)*raioX,
+					sin(angle)*raioY);
+			}
+			glEnd();
+			glutPostRedisplay();
 		}
 		else if (var == 'd') {
-
+			GLfloat circle_points = 90.5f;
+			GLfloat angle, raioX = 0.55f, raioY = 0.11f;
+			glBegin(GL_LINE_LOOP);
+			for (int i = 0; i < circle_points; i++) {
+				angle = 2 * PI*i / circle_points;
+				glVertex2f(cos(angle)*raioX,
+					sin(angle)*raioY);
+			}
+			glEnd();
+			glutPostRedisplay();
 		}
 		else if (var == 'e') {
-
 		}
 		else if (var == 'f') {
+			//define fatia de pizza
+			GLfloat circle_points = 5.0f;
+			GLfloat angle, raioX = 0.55f, raioY = 0.55f;
+			glBegin(GL_LINE_LOOP);
+			for (int i = 0; i < circle_points / 2; i++) {
+				angle = 2 * PI*i / circle_points;
+				glVertex2f(cos(angle)*raioX,
+					sin(angle)*raioY);
+			}
+			glEnd();
+			glutPostRedisplay();
 
 		}
 		else if (var == 'g') {
@@ -70,12 +98,12 @@ unsigned char var;
 
 	void init(void){
 		/*  select clearing (background) color       */
-		glClearColor(0.0, 0.0, 0.0, 0.0);
+		glClearColor(0.00, 0.0, 30.0, 0.0);
 
 		/*  initialize viewing values  */
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
-		glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0);
+		glOrtho(0.5, 0.5, 0.5, 00.0, 00.0, 20.0);
 	}
 
 	/*
@@ -89,7 +117,7 @@ unsigned char var;
 	{
 		glutInit(&argc, argv);
 		glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-		glutInitWindowSize(250, 250);
+		glutInitWindowSize(800, 400);
 		glutInitWindowPosition(100, 100);
 		glutCreateWindow("hello");
 		init();
