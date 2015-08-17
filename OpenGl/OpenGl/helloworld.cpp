@@ -7,7 +7,7 @@
 #define PI 3.1415926535898
 
 
-using namespace std; //para dizer que n„o precisa colocar namespace na frente do objeto criado por ela
+using namespace std; //para dizer que n√£o precisa colocar namespace na frente do objeto criado por ela
 
 unsigned char var;
 	void display()
@@ -82,6 +82,19 @@ unsigned char var;
 		}
 		else if (var == 'g') {
 
+		}
+		else if(var == "1"){
+			glBegin(GL_TRIANGLES);
+		        glColor3f(1.0, 1.0, 1.0);
+ 			glVertex3f(0.0, 0.0, 0.0);
+			glVertex3f(1.0, 0.0, 0.0);
+			glVertex3f(0.5, 0.5, 0.0);
+			glBegin(GL_TRIANGLES);
+		        glColor3f(1.0, 1.0, 1.0);
+ 			glVertex3f(0.0, 0.0, 0.0);
+			glVertex3f(-1.0, 0.0, 0.0);
+			glVertex3f(-0.5, -0.5, 0.0);
+glEnd(); 
 		}
 		/*  don't wait!
 		*  start processing buffered OpenGL routines
