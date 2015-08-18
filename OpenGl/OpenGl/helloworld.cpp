@@ -22,7 +22,7 @@ void losangulo25D(float x, float y, float width, float height, float r, float g,
 	glFlush();
 
 	glBegin(GL_POLYGON);
-	glColor3f(r.0.25, g+0.25, b+0.25);
+	glColor3f(r+0.25, g+0.25, b+0.25);
 	glVertex2f(-0.5, 0.0);
 	glVertex2f(-0.5, -0.12);
 	glVertex2f(0.0, -0.62);
