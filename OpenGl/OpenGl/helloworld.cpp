@@ -13,7 +13,7 @@ unsigned char var;
 
 void losangulo25D(float x, float y, float width, float height, float r, float g, float b) {
 	glBegin(GL_POLYGON);
-	glColor3f(0.44, 0.44, 0.44);
+	glColor3f(r, g, b);
 	glVertex2f(0.5, 0.0);
 	glVertex2f(0.0, 0.5);
 	glVertex2f(-0.5, 0.0);
@@ -22,7 +22,7 @@ void losangulo25D(float x, float y, float width, float height, float r, float g,
 	glFlush();
 
 	glBegin(GL_POLYGON);
-	glColor3f(0.55, 0.55, 0.55);
+	glColor3f(r.0.25, g+0.25, b+0.25);
 	glVertex2f(-0.5, 0.0);
 	glVertex2f(-0.5, -0.12);
 	glVertex2f(0.0, -0.62);
@@ -31,7 +31,7 @@ void losangulo25D(float x, float y, float width, float height, float r, float g,
 	glFlush();
 
 	glBegin(GL_POLYGON);
-	glColor3f(0.22, 0.22, 0.22);
+	glColor3f(r-0.25, g-0.25, b-0.25);
 	glVertex2f(0.5, 0.0);
 	glVertex2f(0.5, -0.12);
 	glVertex2f(0.0, -0.62);
