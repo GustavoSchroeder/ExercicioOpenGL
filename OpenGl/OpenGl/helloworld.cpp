@@ -10,6 +10,37 @@
 using namespace std; //para dizer que não precisa colocar namespace na frente do objeto criado por ela
 
 unsigned char var;
+
+void losangulo25D(float x, float y, float width, float height, float r, float g, float b) {
+	glBegin(GL_POLYGON);
+	glColor3f(0.44, 0.44, 0.44);
+	glVertex2f(0.5, 0.0);
+	glVertex2f(0.0, 0.5);
+	glVertex2f(-0.5, 0.0);
+	glVertex2f(0.0, -0.5);
+	glEnd();
+	glFlush();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0.55, 0.55, 0.55);
+	glVertex2f(-0.5, 0.0);
+	glVertex2f(-0.5, -0.12);
+	glVertex2f(0.0, -0.62);
+	glVertex2f(0.0, -0.50);
+	glEnd();
+	glFlush();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0.22, 0.22, 0.22);
+	glVertex2f(0.5, 0.0);
+	glVertex2f(0.5, -0.12);
+	glVertex2f(0.0, -0.62);
+	glVertex2f(0.0, -0.50);
+	//glVertex2f()
+	glEnd();
+	glFlush();
+}
+
 	void display()
 	{
 		/*  clear all pixels  */
@@ -64,7 +95,17 @@ unsigned char var;
 			glEnd();
 			glutPostRedisplay();
 		}
-		else if (var == 'e') {
+		else if (var == 's') {
+			GLfloat circle_points = 90.5f;
+			GLfloat angle, raioX = 1.00f, raioY = 0.55f;
+			glBegin(GL_LINE_LOOP);
+			for (int i = 45; i < circle_points; i++) {
+				angle = 2 * PI*i / circle_points;
+				glVertex2f(cos(angle)*raioX,
+					sin(angle)*raioY);
+			}
+			glEnd();
+			glutPostRedisplay();
 		}
 		else if (var == 'f') {
 			//define fatia de pizza
@@ -78,29 +119,71 @@ unsigned char var;
 			}
 			glEnd();
 			glutPostRedisplay();
+		}
+
+		else if (var == 'h') {
+			GLfloat circle_points = 90.5f;
+			GLfloat angle, raioX = 1.00f, raioY = 0.55f;
+			glBegin(GL_POLYGON);
+			for (int i = 45; i < circle_points; i++) {
+				angle = 2 * PI*i / circle_points;
+				glVertex2f(cos(angle)*raioX,
+					sin(angle)*raioY);
+			}
+			glEnd();
+			glutPostRedisplay();
 
 		}
-		else if (var == 'g') {
-
+		else if (var == '2') {
+			glBegin(GL_POLYGON);
+			glColor3f(1.0, 1.0, 1.0);
+			glVertex2f(1.0, 0.0);
+			glVertex2f(0.0, 1.0);
+			glVertex2f(-1.0, 0.0);
+			glVertex2f(0.0, -1.0);
+			glEnd();
+			glutPostRedisplay();
 		}
-		else if(var == "1"){
-			glBegin(GL_TRIANGLES);
-		        glColor3f(1.0, 1.0, 1.0);
- 			glVertex3f(0.0, 0.0, 0.0);
-			glVertex3f(1.0, 0.0, 0.0);
-			glVertex3f(0.5, 0.5, 0.0);
-			glBegin(GL_TRIANGLES);
-		        glColor3f(1.0, 1.0, 1.0);
- 			glVertex3f(0.0, 0.0, 0.0);
-			glVertex3f(-1.0, 0.0, 0.0);
-			glVertex3f(-0.5, -0.5, 0.0);
-glEnd(); 
+		else if (var == '3') {
+			glBegin(GL_POLYGON);
+			glColor3f(0.44, 0.44, 0.44);
+			glVertex2f(0.5, 0.0);
+			glVertex2f(0.0, 0.5);
+			glVertex2f(-0.5, 0.0);
+			glVertex2f(0.0, -0.5);
+			glEnd();
+			glFlush();
+
+			glBegin(GL_POLYGON);
+			glColor3f(0.55, 0.55, 0.55);
+			glVertex2f(-0.5, 0.0);
+			glVertex2f(-0.5, -0.12);
+			glVertex2f(0.0, -0.62);
+		    glVertex2f(0.0, -0.50);
+			glEnd();
+			glFlush();
+
+			glBegin(GL_POLYGON);
+			glColor3f(0.22, 0.22, 0.22);
+			glVertex2f(0.5, 0.0);
+			glVertex2f(0.5, -0.12);
+			glVertex2f(0.0, -0.62);
+			glVertex2f(0.0, -0.50);
+			//glVertex2f()
+			glEnd();
+			glFlush();
+		}
+		else if (var == '4') {
+			losangulo25D(0.2, 0.3, 0.5, 0.7, 0.25, 0.25, 0.25);
+			glFlush();
+
 		}
 		/*  don't wait!
 		*  start processing buffered OpenGL routines
 		*/
 		glFlush();
 	}
+
 
 	void keyboard(unsigned char key, int x, int y) {
 		if (key == 'q') {
