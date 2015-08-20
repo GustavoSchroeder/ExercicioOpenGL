@@ -12,7 +12,6 @@ using namespace std; //para dizer que não precisa colocar namespace na frente d
 unsigned char var;
 
 void losangulo25D(float x, float y, float width, float height, float r, float g, float b) {
-void losangulo25D(float x, float y, float width, float height, float r, float g, float b){
 	glBegin(GL_POLYGON);
 	glColor3f(r, g, b);
 		glVertex2f(x, y);
