@@ -177,7 +177,7 @@ void losangulo25D(float x, float y, float width, float height, float r, float g,
 			glFlush();
 		}
 		else if (var == '4') {
-			losangulo25D(0.00, 0.5, 0.4, 0.1, 0.8, 0.8, 0.8);
+			losangulo25D(0.0, 0.5, 0.4, 0.1, 0.8, 0.8, 0.8);
 			losangulo25D(-0.4, 0.3, 0.4, 0.1, 0.8, 0.8, 0.8);
 			losangulo25D(-0.8, 0.1, 0.4, 0.1, 0.8, 0.8, 0.8);
 			losangulo25D(-1.2, -0.1, 0.4, 0.1, 0.8, 0.8, 0.8);
