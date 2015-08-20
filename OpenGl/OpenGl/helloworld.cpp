@@ -12,35 +12,39 @@ using namespace std; //para dizer que não precisa colocar namespace na frente d
 unsigned char var;
 
 void losangulo25D(float x, float y, float width, float height, float r, float g, float b) {
+void losangulo25D(float x, float y, float width, float height, float r, float g, float b){
 	glBegin(GL_POLYGON);
 	glColor3f(r, g, b);
-	glVertex2f(0.5, 0.0);
-	glVertex2f(0.0, 0.5);
-	glVertex2f(-0.5, 0.0);
-	glVertex2f(0.0, -0.5);
+		glVertex2f(x, y);
+		glVertex2f(x + width, y + (width /2));
+		glVertex2f(x, y + (width));
+		glVertex2f((x - width), y + (width / 2));
 	glEnd();
-	glFlush();
 
 	glBegin(GL_POLYGON);
-	glColor3f(r+0.25, g+0.25, b+0.25);
-	glVertex2f(-0.5, 0.0);
-	glVertex2f(-0.5, -0.12);
-	glVertex2f(0.0, -0.62);
-	glVertex2f(0.0, -0.50);
+	glColor3f(r * 0.8, g * 0.8, b * 0.8);
+		glVertex2f(x, y);
+		glVertex2f(x + width, y + (width / 2));
+		glVertex2f(x + width, y + (width / 2) - height);
+		glVertex2f(x, y - height);
 	glEnd();
-	glFlush();
 
 	glBegin(GL_POLYGON);
-	glColor3f(r-0.25, g-0.25, b-0.25);
-	glVertex2f(0.5, 0.0);
-	glVertex2f(0.5, -0.12);
-	glVertex2f(0.0, -0.62);
-	glVertex2f(0.0, -0.50);
-	//glVertex2f()
+	glColor3f(r * 0.8, g * 0.8, b * 0.8);
+	glVertex2f(x, y);
+	glVertex2f((x - width), y + (width / 2));
+	glVertex2f((x - width), y + (width / 2) - height);
+	glVertex2f(x, y - height);
 	glEnd();
-	glFlush();
+
+	glBegin(GL_LINE_LOOP);
+	glColor3f(0, 0, 0);
+	glVertex2f(x, y);
+	glVertex2f(x + width, y + (width / 2));
+	glVertex2f(x, y + (width));
+	glVertex2f((x - width), y + (width / 2));
+	glEnd();
 }
-
 	void display()
 	{
 		/*  clear all pixels  */
@@ -174,7 +178,22 @@ void losangulo25D(float x, float y, float width, float height, float r, float g,
 			glFlush();
 		}
 		else if (var == '4') {
-			losangulo25D(0.2, 0.3, 0.5, 0.7, 0.25, 0.25, 0.25);
+			losangulo25D(0, 5, 4, 1, 0.8, 0.8, 0.8);
+			losangulo25D(-4, 3, 4, 1, 0.8, 0.8, 0.8);
+			losangulo25D(-8, 1, 4, 1, 0.8, 0.8, 0.8);
+			losangulo25D(-12, -1, 4, 1, 0.8, 0.8, 0.8);
+			losangulo25D(4, 3, 4, 1, 0.8, 0.8, 0.8);
+			losangulo25D(0, 0, 4, 1, 0.4, 0.4, 0.4);
+			losangulo25D(-4, -2, 4, 1, 0.4, 0.4, 0.4);
+			losangulo25D(-8, -3, 4, 1, 0.8, 0.8, 0.8);
+			losangulo25D(8, 1, 4, 1, 0.8, 0.8, 0.8);
+			losangulo25D(4, -1, 4, 1, 0.6, 0.7, 8);
+			losangulo25D(0, -4, 4, 1, 0.4, 0.4, 0.4);
+			losangulo25D(-4, -5, 4, 1, 0.8, 0.8, 0.8);
+			losangulo25D(12, -1, 4, 1, 0.8, 0.8, 0.8);
+			losangulo25D(8, -3, 4, 1, 0.8, 0.8, 0.8);
+			losangulo25D(4, -5, 4, 1, 0.8, 0.8, 0.8);
+			losangulo25D(0, -7, 4, 1, 0.8, 0.8, 0.8);
 			glFlush();
 
 		}
